@@ -1,8 +1,11 @@
 # simon
-A ripoff of simon by hasbro games
+A ripoff of Simon by hasbro games
 
+Read about Simon here: https://en.wikipedia.org/wiki/Simon_(game)
 
-The game is currently capable of building and showing the first solution. 
-Soon, I will allow player to make their moves by clicking on the buttons. 
-The buttons will add ints to a list that will be checked against the master solution. 
-if they're equal, the game will reset all of solutions values and rebuild them with number_of_solutions++
+Install pygame here: http://www.pygame.org/download.shtml
+
+Directions: Watch the flashing lights closely and try to remember the order in which they appeared. After they have flashed, click the buttons in the same order they appeared. 
+
+Enjoy!
+
