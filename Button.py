@@ -1,7 +1,9 @@
+
 class Button():
 	def __init__(self):
 		self.lit = False
 		self.turn_off_lights_timer = 0
+		self.turn_of_confirmation_light_timer = 0
 	def draw_self(self):
 		if self.lit == False:
 			pygame.draw.rect(gameDisplay, self.color, [self.x, self.y, button_length, button_length])
@@ -11,7 +13,22 @@ class Button():
 
 	def light_up(self):
 		self.lit = True
-		self.turn_off_lights_timer = pygame.time.get_ticks() + 500#1000
+		self.turn_off_lights_timer = pygame.time.get_ticks() + 500
+
+
+	def light_up_for_click_confirmation(self):
+		self.lit = True
+		self.turn_off_lights_timer = pygame.time.get_ticks() + 100
+
+
+	def turn_off_lights(self):
+		if pygame.time.get_ticks() > i.turn_off_lights_timer: #turn this bad boy into a function
+			i.lit = False
+
+	def loop_tasks(self):
+		self.draw_self()
+		self.turn_off_lights()
+
 
 class RedButton(Button):
 	def __init__(self):
