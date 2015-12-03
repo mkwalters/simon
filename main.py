@@ -16,10 +16,14 @@ green_button = GreenButton()
 red_button = RedButton()
 yellow_button = YellowButton()
 blue_button = BlueButton()
+score_font = pygame.font.Font(None, score_display_size)
+loss_display_font = pygame.font.Font(None, score_display_size)
 
 buttons = [green_button, red_button, yellow_button, blue_button]
 
 solutions= solutionHandler()
+solutions.build_solution_set()
+solutions.build_solution_times()
 
 while still_playing:
 	
@@ -34,14 +38,9 @@ while still_playing:
 
 
 	gameDisplay.fill(background_color)
-	for i in buttons:
-		i.draw_self()
-
-
-
-		if pygame.time.get_ticks() > i.turn_off_lights_timer:
-			i.lit = False
+	for i in buttons: 
+		i.loop_tasks()
 	
-	solutions.master_solution_flasher()
+	solutions.loop_tasks()
 	pygame.display.update()
 	clock.tick(30)
